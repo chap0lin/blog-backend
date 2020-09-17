@@ -10,10 +10,10 @@ module.exports = {
         database : process.env.PG_DATABASE,
     },
     migrations: {
-        directory: path.resolve(__dirname, 'src', 'database', 'migrations')
+        directory: path.resolve(__dirname, 'dist', 'src', 'database', 'migrations')
     },
     seeds: {
-        directory: path.resolve(__dirname, 'src', 'database', 'seeds')
+        directory: path.resolve(__dirname, 'dist', 'src', 'database', 'seeds')
     },
     useNullAsDefault: true
 }
