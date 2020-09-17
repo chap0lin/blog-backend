@@ -6,10 +6,9 @@
   "scripts": {
     "start": "node dist/src/server.js",
     "dev": " ts-node-dev --ignore-watch node_modules src/server.ts",
-    "knex:migrate": "knex --knexfile knexfile.js migrate:latest",
-    "knex:seed": "knex --knexfile knexfile.js seed:run",
-    "knex:rollback": "knex --knexfile knexfile.js migrate:rollback",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "knex:migrate": "knex --knexfile dist/knexfile.js migrate:latest",
+    "knex:seed": "knex --knexfile dist/knexfile.js seed:run",
+    "knex:rollback": "knex --knexfile dist/knexfile.js migrate:rollback",
     "build": "tsc"
   },
   "keywords": [],
