@@ -26,7 +26,7 @@ export default class ImagesController{
         response.json({
             original_name: originalname,
             url: `https://s3.amazonaws.com/carlos.blog.test/${filename}`,
-            inserted_at
+            inserted_at: inserted_at[0]
         })
     }
     async delete(request: Request, response: Response){
@@ -34,11 +34,11 @@ export default class ImagesController{
         
         const key = await knex('images').where('id', '=', id).del().returning('url')
         //const key = await knex('images').where('id', '=', id).del()
-        console.log(key)
+        console.log(key[0])
         //delete from s3
         s3.deleteObject({
             Bucket: process.env.BUCKET_NAME || '',
-            Key: `${key}`,
+            Key: `${key[0]}`,
         }).promise().then(response=>{
             console.log(response)
         }).catch(response=>{

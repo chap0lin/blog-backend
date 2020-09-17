@@ -51,13 +51,13 @@ export default class PostsController{
         if(false && categories.length>1){
             categories.map(async (category: Number) => {
                 categoryVsPostItem.push({
-                    post_id: postId,
+                    post_id: postId[0],
                     category_id: category
                 })
             })
         }else{
             categoryVsPostItem = {
-                post_id: postId,
+                post_id: postId[0],
                 category_id: categories
             }
         }
