@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src/server.js",
+    "start": "node dist/src/server.js",
     "dev": " ts-node-dev --ignore-watch node_modules src/server.ts",
-    "knex:migrate": "knex --knexfile knexfile.ts migrate:latest",
-    "knex:seed": "knex --knexfile knexfile.ts seed:run",
-    "knex:rollback": "knex --knexfile knexfile.ts migrate:rollback",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "knex:migrate": "knex --knexfile dist/knexfile.ts migrate:latest",
+    "knex:seed": "knex --knexfile dist/knexfile.ts seed:run",
+    "knex:rollback": "knex --knexfile dist/knexfile.ts migrate:rollback",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
